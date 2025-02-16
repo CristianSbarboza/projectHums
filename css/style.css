@@ -1,0 +1,38 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #eaecee;
+}
+
+#father{
+    width: 100%;
+    height: 100vh;
+    max-width: 1000px;
+    background-color: #dadada;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#container-title{
+    
+}
+
+#container-link-header{
+    display: flex;
+    align-items: center;
+    
+    
+}
