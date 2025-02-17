@@ -4,35 +4,69 @@ body{
     flex-direction: column;
     align-items: center;
 
-    background-color: #eaecee;
+    background-image: url('../img/fundo-img.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #father{
     width: 100%;
     height: 100vh;
-    max-width: 1000px;
-    background-color: #dadada;
+    max-width: 900px;
+    background-color: #dadadacb;
     margin-top: 20px;
     margin-bottom: 20px;
 
     border-radius: 10px;
 
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 header{
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 #container-title{
-    
+    margin: 15px;
 }
 
 #container-link-header{
     display: flex;
     align-items: center;
+    margin: 15px;
     
     
+}
+
+
+#form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.style-container{
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+}
+
+
+footer{
+    display: flex;
+    justify-content: center;
 }

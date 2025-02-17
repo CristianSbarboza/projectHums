@@ -12,3 +12,28 @@ li{
 a{
     text-decoration: none;
 }
+
+select, input{
+    width: 250px;
+
+    padding: 10px;
+
+    border: 0;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+input[type='submit']{
+    cursor: pointer;
+
+    transition: 0.4s;
+    border: 0;
+    background-color: gray;
+    color: #fff;
+    opacity: 0.8;
+}
+
+input[type='submit']:hover{
+    opacity: 1;
+}
