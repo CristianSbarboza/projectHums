@@ -68,6 +68,55 @@ form{
     margin-bottom: 20px;
 }
 
+#aquisition-acelerometro-container-aw{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#aquisition-acelerometro-container-aw #aquisition-acelerometro-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+.description input{
+    width: 50%;
+    background-color: #eeeeeed5;
+}
+
+#health-indices-container{
+    display: flex;
+    justify-content: center;
+}
+
+#health-indices-container div{
+    display: flex;
+    flex-direction: column;
+   
+    margin-top: 20px;
+
+}
+
+#health-indices-container input{
+    background-color: #eeeeeed5;
+}
+
+#aquisicao-container div label{
+    display: flex;
+    align-self: flex-start;
+}
+
 
 footer{
     display: flex;

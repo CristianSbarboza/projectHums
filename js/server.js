@@ -1,24 +1,32 @@
+// js/server.js
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const db = require('./db');
+const configurarRotas = require('./routes'); // Importa as rotas
+const path = require('path');
 
+const porta = 3001;
 const app = express();
+
 app.use(cors());
 app.use(bodyParser.json());
 
-app.post('/salvar', (req, res) => {
-  const { horario, aeronave, resultado } = req.body;
-  const sql = 'INSERT INTO analiseHums (horario, aeronave, resultado) VALUES (?, ?, ?)';
+// Configura as rotas
+configurarRotas(app);
 
-  db.query(sql, [horario, aeronave, resultado], (err, result) => {
-    if (err) {
-      console.error('Erro ao inserir:', err);
-      res.status(500).send('Erro no servidor');
-    } else {
-      res.status(200).send('Dados salvos com sucesso!');
-    }
-  });
+app.use(express.static(path.join(__dirname, '..')));
+
+// **Define a rota "/" para carregar o index.html**
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
-app.listen(3001, () => console.log('Servidor rodando na porta 3001'));
+app.get('/historico', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'historico.html'));  // Localize o arquivo corretamente
+});
+
+
+
+
+// Inicia o servidor
+app.listen(porta, () => console.log(`✅ Servidor rodando na porta ${porta}`));

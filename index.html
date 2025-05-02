@@ -8,27 +8,34 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/modal-confirmed.css">
     <link rel="stylesheet" href="css/responsive.css">
 
-    <script src="js/server.js"></script>
-    <script src="js/script.js" defer></script>
+    
 </head>
 <body>
 
     <div id="father">
     
         <header>
-            <div id="container-title"><h1>Analise Hums</h1></div>
-            <div id="container-link-header"><a href="">⌛</a></div>
+            <div id="container-title"><h1>Analise Hums AW139</h1></div>
+            <div id="container-link-header"><a href="http://localhost:3001/historico">⌛</a></div>
         </header>
+
+        <section class="modal-confirmed display-modal-confirmed" >
+            <div>
+                <h3>Dados enviados com sucesso</h3>
+            </div>
+        </section>
     
         <main>
             <section id="form-container">
-                <form action="" method="post">
+                <form id="dataForm">
     
                     <section id="hour-container" class="style-container">
                         <label for="horario">Horario:</label>
                         <select name="horario" id="horario" required>
+                            <option value="" disabled selected>Escolha o horário</option>
                             <option value="primeiro-horario">Primeiro horario</option>
                             <option value="segundo-horario">Segundo horario</option>
                             <option value="terceiro-horario">Terceiro horario</option>
@@ -38,30 +45,59 @@
                     <section id="aero-container" class="style-container">
                         <label for="aeronave">Aeronave:</label>
                         <select name="aeronave" id="aeronave" required>
+                            <option value="" disabled selected>Escolha a aéronave</option>
                             <option value="pr-ooa">PR-OOA</option>
                             <option value="pr-ooc">PR-OOC</option>
                             <option value="pr-cgn">PR-CGN</option>
-                            <option value="pr-ohn">PR-OHN</option>
-                            <option value="pr-bgx">PR-BGX</option>
-                            <option value="pr-ots">PR-OTS</option>
+                            <option value="pr-ohb">PR-OHB</option>
+                            <!-- <option value="pr-ots">PR-OTS</option>
                             <option value="pr-otn">PR-OTN</option>
                             <option value="pr-otp">PR-OTP</option>
                             <option value="pr-otq">PR-OTQ</option>
                             <option value="pr-oop">PR-OOP</option>
                             <option value="pr-ooq">PR-OOQ</option>
-                            <option value="pr-bgb">PR-BGB</option>
+                            <option value="pr-bgb">PR-BGB</option> -->
                         </select>
                     </section>
     
                     <section id="result-container" class="style-container">
                         <label for="result">Resultado:</label>
                         <select name="result" id="result" required>
+                            <option value="" disabled selected>Escolha o alarme</option>
                             <option value="ndf">NDF</option>
                             <option value="amarelo-nao-confirmado">AMARELO NÃO CONFIRMADO</option>
                             <option value="amarelo-confirmado">AMARELO CONFIRMADO</option>
                             <option value="vermelho-nao-confirmado">VERMELHO NÃO CONFIRMADO</option>
                             <option value="vermelho-confirmado">VERMELHO CONFIRMADO</option>
                         </select>
+                    </section>
+
+                    <!-- <section id="container-modelo" class="style-container">
+                        <label for="modelos">Modelo</label>
+                        <select name="modelos" id="modelos">
+                            <option value="" selected disabled>Escolha o modelo</option>
+                            <option id="aw139" value="aw175">AW139</option>
+                            <option id="h175" value="h175">H175</option>
+                        </select>
+                    </section> -->
+
+                    <section id="aquisition-acelerometro-container-aw" class="style-container">
+                        <section id="aquisition-acelerometro-content">
+                            <div id="aquisicao-container" class="description">
+                                <label for="aquisicao">Aquisição:</label>
+                                <input type="number" id="aquisicao" name="aquisicao" placeholder="ex: 000">
+                            </div>
+                            <div id="acelerometro-container" class="description">
+                                <label for="acelerometro">Acelerômetro:</label>
+                                <input type="number" id="acelerometro" name="acelerometro" placeholder="ex: 00">
+                            </div>
+                        </section>
+                        <section id="health-indices-container">
+                            <div>
+                                <label for="health-indices">Health Indices:</label>
+                                <input type="text" id="health-indices">
+                            </div>
+                        </section>
                     </section>
     
                     <div id="btn-container">
@@ -77,4 +113,5 @@
     </div>
 
 </body>
+<script src="js/form.js"></script>
 </html>

@@ -1,0 +1,25 @@
+.modal-confirmed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+} 
+
+.display-modal-confirmed{
+    display: none;
+}
+
+.modal-confirmed div{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(6, 219, 84);
+
+    padding: 20px;
+    border-radius: 10px;
+}
+
+

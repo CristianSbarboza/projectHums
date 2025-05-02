@@ -1,5 +1,7 @@
-require('dotenv').config();
-const mysql = require('mysql');
+require('dotenv').config({ path: __dirname + '/../credenciais.env' });
+
+
+const mysql = require('mysql2');
 
 
 const db = mysql.createConnection({

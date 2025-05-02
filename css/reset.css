@@ -5,6 +5,17 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
 li{
     list-style: none;
 }
@@ -36,4 +47,9 @@ input[type='submit']{
 
 input[type='submit']:hover{
     opacity: 1;
+}
+
+
+.disply-off{
+    display: none;
 }
