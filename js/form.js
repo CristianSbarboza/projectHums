@@ -21,7 +21,7 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
     };
   
     // Envia os dados como JSON usando a fetch API
-    fetch('http://localhost:3001/salvar', {
+    fetch('http://localhost:3003/salvar', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -30,7 +30,6 @@ document.getElementById('dataForm').addEventListener('submit', function(event) {
     })
     .then(response => response.json())
     .then(data => {
-        console.log('Sucesso:', data);
 
         const modalConfirmed = document.querySelector('.modal-confirmed')
 

@@ -1,5 +1,5 @@
 function carregarHistorico() {
-    fetch('http://localhost:3001/historico/dados')
+    fetch('http://localhost:3003/historico/dados')
       .then(response => {
         if (!response.ok) {
           throw new Error('Erro ao buscar dados: ' + response.statusText);
@@ -29,6 +29,9 @@ function carregarHistorico() {
                   <th>Aeronave</th>
                   <th>Horário</th>
                   <th>Resultado</th>
+                  <th>Aquisição</th>
+                  <th>Acelerometro</th>
+                  <th>HealthIndices</th>
                 </tr>
               </thead>
               <tbody>
@@ -37,6 +40,9 @@ function carregarHistorico() {
                     <td>${reg.aeronave}</td>
                     <td>${reg.horario}</td>
                     <td>${reg.resultado}</td>
+                    <td>${reg.aquisicao}</td>
+                    <td>${reg.acelerometro}</td>
+                    <td>${reg.healthIndices}</td>
                   </tr>
                 `).join('')}
               </tbody>

@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const configurarRotas = require('./routes'); // Importa as rotas
 const path = require('path');
 
-const porta = 3001;
+const porta = 3003;
 const app = express();
 
 app.use(cors());

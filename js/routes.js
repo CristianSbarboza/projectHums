@@ -6,17 +6,17 @@ const db = require('./db');
 // Função para salvar os dados no banco de dados
 const salvarDados = async (req, res) => {
   try {
-    const { horario, aeronave, resultado } = req.body;
+    const { horario, aeronave, resultado, aquisicao, acelerometro, healthIndices } = req.body;
 
     // Verifica se todos os dados foram enviados
-    if (!aeronave || !horario || !resultado) {
+    if (!aeronave || !horario || !resultado || !aquisicao || !acelerometro || !healthIndices) {
       return res.status(400).json({ erro: 'Todos os campos são obrigatórios!' });
     }
 
-    const sql = 'INSERT INTO analiseHums (aeronave, horario, resultado) VALUES (?, ?, ?)';
+    const sql = 'INSERT INTO analiseHums (aeronave, horario, resultado, aquisicao, acelerometro, healthIndices) VALUES (?, ?, ?, ?, ?, ?)';
     
     // Executa a query como Promise
-    const [result] = await db.promise().query(sql, [aeronave, horario, resultado]);
+    const [result] = await db.promise().query(sql, [aeronave, horario, resultado, aquisicao, acelerometro, healthIndices]);
 
     res.status(200).json({
       mensagem: 'Dados salvos com sucesso!',
@@ -42,7 +42,10 @@ const getDados = async (req, res) => {
           'id', id,
           'horario', horario,
           'aeronave', aeronave,
-          'resultado', resultado
+          'resultado', resultado,
+          'aquisicao', aquisicao,
+          'acelerometro', acelerometro,
+          'healthIndices', healthIndices
         )
       ) AS registros
       FROM analiseHums
